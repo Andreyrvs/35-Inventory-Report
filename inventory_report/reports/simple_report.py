@@ -1,8 +1,11 @@
-class SimpleReport:
+from abc import ABC, abstractmethod
+
+
+class SimpleReport(ABC):
     def __init__(self, products):
         self.products = products
-        print(products)
 
+    @abstractmethod
     def generate(self, products):
 
         return (
