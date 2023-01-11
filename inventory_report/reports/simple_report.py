@@ -8,20 +8,24 @@ class SimpleReport():
         earliest_date = []
         closest_date = []
 
+        miau = 0
         for product in products:
-            Company_with_more_products = product.get("nome_da_empresa")
             earliest_date.append(product["data_de_fabricacao"])
 
             if product["data_de_validade"] >= str(datetime.now().date()):
                 closest_date.append(product["data_de_validade"])
 
             company_with_more_products.append(product["nome_da_empresa"])
-            contar = company_with_more_products.count(product["nome_da_empresa"])
-            print(f"🔥🔥🔥{contar}")
 
+            company_with_more_products.count(product["nome_da_empresa"])
+
+            miau = max(
+                company_with_more_products,
+                key=company_with_more_products.count
+            )
 
         return (
             f"Data de fabricação mais antiga: {min(earliest_date)}\n"
             f"Data de validade mais próxima: {min(closest_date)}\n"
-            f"Empresa com mais produtos: {Company_with_more_products}"
+            f"Empresa com mais produtos: {miau}"
         )
