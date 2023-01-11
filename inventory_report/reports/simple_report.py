@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from datetime import datetime
 
 
 class SimpleReport(ABC):
@@ -7,29 +8,24 @@ class SimpleReport(ABC):
 
     @abstractmethod
     def generate(products):
+        data_de_fabricacao = ""
+        data_de_validade = ""
+        empresa = ""
+        old_date = []
 
-        data_fab = "Data de fabricação mais antiga:"
-        data_val = "Data de validade mais próxima:"
-        empresa = "Empresa com mais produtos:"
-
-        string_with_data = ""
         for product in products:
-            string_with_data = f"""{data_fab} {product.get("data_de_fabricacao")}\n{data_val} {product.get("data_de_validade")}\n{empresa} {product.get("nome_da_empresa")}\n"
-            """
+            empresa = product.get("nome_da_empresa")
 
-        return string_with_data
+            old_date.append(product["data_de_fabricacao"])
+
+            if product["data_de_validade"] < str(datetime.now().date):
+                data_de_validade = product.get("data_de_validade")
 
 
-# products = [
-#      {
-#        "id": 1,
-#        "nome_do_produto": "CADEIRA",
-#        "nome_da_empresa": "Forces of Nature",
-#        "data_de_fabricacao": "2022-04-04",
-#        "data_de_validade": "2023-02-09",
-#        "numero_de_serie": "FR48",
-#        "instrucoes_de_armazenamento": "Conservar em local fresco"
-#      }
-#    ]
+        print(f"🔥🔥🔥🔥🔥🔥{old_date}")
 
-# print(SimpleReport.generate(products))
+        return (
+            f"Data de fabricação mais antiga: {min(old_date)}\n"
+            f"Data de validade mais próxima: {data_de_validade}\n"
+            f"Empresa com mais produtos: {empresa}"
+        )
