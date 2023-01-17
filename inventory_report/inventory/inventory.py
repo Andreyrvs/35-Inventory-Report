@@ -23,13 +23,7 @@ class Inventory:
         if str(last_three_letters) == "son":
             with open(string_path) as file:
                 json_data = json.load(file)
-
                 if string_type == "simples":
                     return SimpleReport.generate(json_data)
                 if string_type == "completo":
                     return CompleteReport.generate(json_data)
-
-        if str(last_three_letters) == "xml":
-            pass
-            # tree = ET.parse(string_path)
-            # root = tree.getroot()
