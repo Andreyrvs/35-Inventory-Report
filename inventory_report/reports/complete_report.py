@@ -23,13 +23,3 @@ class CompleteReport():
             f"Produtos estocados por empresa:\n"
             f"{formatted}"
         )
-
-
-        # company = []
-        # total = 0
-        # for product in products:
-        #     company.append(product["nome_da_empresa"])
-        #     total = company.count(product["nome_da_empresa"])
-        #     companies = product["nome_da_empresa"]
-
-        #     formatted += f"- {companies}: {total}\n"
