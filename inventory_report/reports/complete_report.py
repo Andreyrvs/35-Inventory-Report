@@ -6,20 +6,30 @@ class CompleteReport():
     @classmethod
     def generate(cls, products):
         simple_report = SimpleReport.generate(products)
-        company = []
-        total = 0
         formatted = ""
+        companies = {}
 
         for product in products:
-            company.append(product["nome_da_empresa"])
-            total = company.count(product["nome_da_empresa"])
-            companies = product["nome_da_empresa"]
+            if product["nome_da_empresa"] not in companies:
+                companies[product["nome_da_empresa"]] = 1
+            else:
+                companies[product["nome_da_empresa"]] += 1
 
-            formatted += f"- {companies}: {total}\n"
+        for key in companies:
+            formatted += f"- {key}: {companies[key]}\n"
 
-        print(f"🔥🔥🔥{formatted}")
         return (
             f"{simple_report}\n"
             f"Produtos estocados por empresa:\n"
             f"{formatted}"
         )
+
+
+        # company = []
+        # total = 0
+        # for product in products:
+        #     company.append(product["nome_da_empresa"])
+        #     total = company.count(product["nome_da_empresa"])
+        #     companies = product["nome_da_empresa"]
+
+        #     formatted += f"- {companies}: {total}\n"
