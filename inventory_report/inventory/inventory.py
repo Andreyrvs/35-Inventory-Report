@@ -2,7 +2,7 @@ from inventory_report.reports.simple_report import SimpleReport
 from inventory_report.reports.complete_report import CompleteReport
 import csv
 import json
-import xml.etree.ElementTree as ET
+# import xml.etree.ElementTree as ET
 
 
 class Inventory:
@@ -30,6 +30,6 @@ class Inventory:
                     return CompleteReport.generate(json_data)
 
         if str(last_three_letters) == "xml":
-
-            tree = ET.parse(string_path)
-            root = tree.getroot()
+            pass
+            # tree = ET.parse(string_path)
+            # root = tree.getroot()
