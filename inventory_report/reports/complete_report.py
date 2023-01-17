@@ -8,17 +8,17 @@ class CompleteReport():
         physicians_qtd = 0
         newton_qtd = 0
         forces = 0
+        simple_report = SimpleReport.generate(products)
 
         for product in products:
-            if product["nome_da_empresa"] == "Physicians Total Care, Inc.":
+            if product["nome_da_empresa"] == simple_report:
                 physicians_qtd += 1
             if product["nome_da_empresa"] == "Newton Laboratories, Inc.":
-                physicians_qtd += 1
+                newton_qtd += 1
             if product["nome_da_empresa"] == "Forces of Nature":
-                physicians_qtd += 1
+                forces += 1
 
         # print(f"🔥{physicians_qtd}💵{newton_qtd}⏰{forces}")
-        simple_report = SimpleReport.generate(products)
         return (
             f"{simple_report}\n"
             f"Produtos estocados por empresa:\n"
