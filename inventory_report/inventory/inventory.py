@@ -1,6 +1,8 @@
 from inventory_report.reports.simple_report import SimpleReport
 from inventory_report.reports.complete_report import CompleteReport
 import csv
+import json
+import xml.etree.ElementTree as ET
 
 
 class Inventory:
@@ -17,3 +19,17 @@ class Inventory:
                     return SimpleReport.generate(csv_list)
                 if string_type == "completo":
                     return CompleteReport.generate(csv_list)
+
+        if str(last_three_letters) == "son":
+            with open(string_path) as file:
+                json_data = json.load(file)
+
+                if string_type == "simples":
+                    return SimpleReport.generate(json_data)
+                if string_type == "completo":
+                    return CompleteReport.generate(json_data)
+
+        if str(last_three_letters) == "xml":
+
+            tree = ET.parse(string_path)
+            root = tree.getroot()
