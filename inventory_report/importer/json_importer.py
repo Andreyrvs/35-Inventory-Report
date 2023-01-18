@@ -1,4 +1,5 @@
 from inventory_report.importer.importer import Importer
+import json
 
 
 class JsonImporter(Importer):
@@ -9,3 +10,7 @@ class JsonImporter(Importer):
 
         if last_three_letters != '.json':
             raise ValueError("Arquivo inválido")
+
+        with open(path_name) as file:
+            json_data = json.load(file)
+            return json_data
