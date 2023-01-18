@@ -10,7 +10,7 @@ class Inventory:
     def import_data(cls, string_path, string_type):
         cls.read_csv(cls, string_path, string_type)
         cls.read_json(cls, string_path, string_type)
-        cls.formatedd_xml(cls, string_path, string_type)
+        cls.formatted_xml(cls, string_path, string_type)
 
     def read_csv(self, string_path, string_type):
         self.string_path = string_path
@@ -45,6 +45,7 @@ class Inventory:
         self.string_path = string_path
 
         last_three_letters = self.string_path[-3:]
+        print(f"🔥🔥🔥{last_three_letters}")
         if str(last_three_letters) == "xml":
             tree = ET.parse(self.string_path)
             root = tree.getroot()
@@ -63,7 +64,7 @@ class Inventory:
 
             return xml_data
 
-    def formatedd_xml(self, string_path, string_type):
+    def formatted_xml(self, string_path, string_type):
         self.string_path = string_path
         self.string_type = string_type
 
