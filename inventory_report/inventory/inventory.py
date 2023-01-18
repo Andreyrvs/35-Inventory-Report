@@ -9,6 +9,7 @@ class Inventory:
     @classmethod
     def import_data(cls, string_path, string_type):
         last_three_letters = string_path[-3:]
+
         if str(last_three_letters) == "csv":
             return cls.read_csv(cls, string_path, string_type)
 
@@ -61,10 +62,8 @@ class Inventory:
         return xml_data
 
     def formatted_xml(self, string_path, string_type):
-        self.string_path = string_path
-        self.string_type = string_type
 
-        if self.string_type == "simples":
+        if string_type == "simples":
             return SimpleReport.generate(self.read_xml(self, string_path))
-        if self.string_type == "completo":
+        if string_type == "completo":
             return CompleteReport.generate(self.read_xml(self, string_path))
