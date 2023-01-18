@@ -5,5 +5,5 @@ from abc import ABC, abstractmethod
 class Importer(ABC):
     @classmethod
     @abstractmethod
-    def import_data(cls, strategy):
+    def import_data(cls, path_name):
         raise NotImplementedError
