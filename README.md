@@ -1,8 +1,18 @@
-# My Awesome Project
+# Inventory Report
 
 ## Contexto
 
-Este projeto trata-se de um conversor de imagens simpes. É possivel converter imagems no fomato .webp para .png!
+um gerador de relatórios que recebe como entrada arquivos com dados de um estoque e gera, como saída, um relatório acerca destes dados.
+
+Esses dados de estoque poderão ser obtidos de diversas fontes:
+
+- Através da importação de um arquivo CSV;
+
+- Através da importação de um arquivo JSON;
+
+- Através da importação de um arquivo XML.
+
+Além disso, o relatório final possuirá duas versões: simples e completa
 
 ## Técnologias usadas
 
@@ -14,12 +24,18 @@ Aplicação:
 
 Adquiri essas habilidades ao desenvolver esse projeto:
 
+- Aplicar conceitos de Orientação a Objetos em Python;
+
+- Aplicar padrões de projeto;
+
+- Leitura e escrita de arquivos (XML, CSV, JSON).
+
 ## Instalando Dependências
 
--   clone o projeto:
+- clone o projeto:
 
     ```bash
-    git clone
+    git clone git@github.com:Andreyrvs/35-Inventory-Report.git
     ```
 
 > Aplicação
@@ -27,7 +43,7 @@ Adquiri essas habilidades ao desenvolver esse projeto:
 1. **Entre no diretório**
 
     ```bash
-    cd
+    cd 35-Inventory-Report
     ```
 
 2. **Criar o ambiente virtual**
@@ -50,17 +66,17 @@ Adquiri essas habilidades ao desenvolver esse projeto:
 
 ## Executando aplicação
 
--   Para rodar a aplicação:
+- Para rodar a aplicação:
 
-    ```bash
-    cd src/
-    python3 -u
-    ```
+  ```bash
+  cd src/
+  python3 -u
+  ```
 
 ## Executando Testes
 
--   Para rodar todos os Testes:
+- Para rodar todos os Testes:
 
-    ```bash
-    python3 -m pytest
-    ```
+  ```bash
+  python3 -m pytest
+  ```
