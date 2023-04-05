@@ -66,17 +66,16 @@ Adquiri essas habilidades ao desenvolver esse projeto:
 
 ## Executando aplicação
 
-- Para rodar a aplicação:
-
-  ```bash
-  cd src/
-  python3 -u
-  ```
-
 ## Executando Testes
 
 - Para rodar todos os Testes:
 
   ```bash
   python3 -m pytest
+  ```
+
+- 🐳 Caso queira executar os testes com docker use:
+
+  ```bash
+  docker-compose run --rm inventory pytest
   ```
