@@ -18,7 +18,7 @@ Além disso, o relatório final possuirá duas versões: simples e completa
 
 Aplicação:
 
-> Desenvolvido usando: Python
+> Desenvolvido usando: Python, Pytest
 
 ## Habilidades
 
